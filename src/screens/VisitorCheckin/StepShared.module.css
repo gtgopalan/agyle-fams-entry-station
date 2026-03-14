@@ -1,0 +1,249 @@
+/* ── Shared layout for all check-in step screens ─── */
+
+.screen {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+  background: var(--cream);
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 1.5rem 3rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ── Header block ────────────────────────────────── */
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0;
+}
+
+.instruct {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.tip {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ── Form card ───────────────────────────────────── */
+.card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.cardTitle {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+  margin: 0 0 0.2rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 560px) {
+  .row { grid-template-columns: 1fr; }
+}
+
+/* ── Photo preview row ───────────────────────────── */
+.photoRow {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.photoThumb {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--orange);
+  flex-shrink: 0;
+}
+
+.photoThumbID {
+  width: 160px;
+  height: 100px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+}
+
+/* ── Notice banner ───────────────────────────────── */
+.notice {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  background: rgba(255,153,10,0.07);
+  border: 1px solid rgba(255,153,10,0.3);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  width: 100%;
+}
+
+.noticeIcon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.05rem; }
+
+/* ── Consent checkboxes ──────────────────────────── */
+.checkboxRow {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.checkboxBox {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  border: 2.5px solid var(--border);
+  background: var(--white);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 0.05rem;
+}
+
+.checkboxBox.checked {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+}
+
+.checkboxText {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: var(--dark);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.checkboxLink {
+  color: var(--orange);
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 600;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.consentError {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--red);
+  font-weight: 600;
+}
+
+/* ── Result screen ───────────────────────────────── */
+.resultApproved {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  background: var(--white);
+  border: 2px solid #2a7a2a;
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  width: 100%;
+}
+
+.resultRestricted {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  background: #fff5f5;
+  border: 2px solid var(--red);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  width: 100%;
+}
+
+.resultIcon { font-size: 3.5rem; line-height: 1; }
+
+.resultTitle {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.resultTitle.approved { color: #2a7a2a; }
+.resultTitle.restricted { color: var(--red); }
+
+.resultSub {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.resultMeta {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--text-faint);
+}
+
+/* ── Navigation row ──────────────────────────────── */
+.nav {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  justify-content: center;
+  padding-top: 0.5rem;
+}
+
+.nav > * { min-width: 160px; }

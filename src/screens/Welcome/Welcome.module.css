@@ -1,0 +1,174 @@
+.screen {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 1.5rem;
+}
+
+/* Decorative background circle */
+.bgAccent {
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,153,10,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+  max-width: 760px;
+  z-index: 1;
+}
+
+/* ── Hero text ────────────────────────────────────── */
+.hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.greeting {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin: 0;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0.4rem 0 0;
+  max-width: 480px;
+  line-height: 1.55;
+}
+
+/* ── Cards ────────────────────────────────────────── */
+.cards {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 280px;
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius-lg);
+  border: 2.5px solid var(--border);
+  background: var(--white);
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  text-align: center;
+  font-family: var(--font-sans);
+}
+
+.card:hover:not(:disabled) {
+  border-color: var(--orange);
+  box-shadow: 0 8px 32px rgba(255,153,10,0.18);
+  transform: translateY(-3px);
+}
+
+.card:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.cardPrimary {
+  border-color: var(--orange);
+  box-shadow: 0 4px 20px rgba(255,153,10,0.14);
+}
+
+.cardIcon {
+  font-size: 2.8rem;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.cardLabel {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.2;
+}
+
+.cardSub {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.cardBadge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  background: var(--yellow);
+  color: var(--dark);
+  border-radius: 4px;
+  padding: 0.2rem 0.45rem;
+}
+
+/* ── Reception note ──────────────────────────────── */
+.receptionNote {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  text-align: center;
+  margin: 0;
+}
+
+/* ── Staff Access button ─────────────────────────── */
+.staffBtn {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-faint);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  margin-top: -1rem;
+}
+
+.staffBtn:hover {
+  color: var(--dark);
+  border-color: var(--dark);
+}

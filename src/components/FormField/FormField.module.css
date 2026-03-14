@@ -1,0 +1,110 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  width: 100%;
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.sublabel {
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+
+.required {
+  color: var(--red);
+  margin-left: 0.1rem;
+}
+
+.control input,
+.control select,
+.control textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--dark);
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  outline: none;
+  transition: border-color 0.18s, box-shadow 0.18s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.control input:focus,
+.control select:focus,
+.control textarea:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(255,153,10,0.15);
+}
+
+.control select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.control textarea {
+  resize: vertical;
+  min-height: 90px;
+  line-height: 1.5;
+}
+
+/* Toggle (yes/no) */
+.control .toggleGroup {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.control .toggleGroup button {
+  flex: 1;
+  padding: 0.85rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: border-color 0.18s, background 0.18s, color 0.18s;
+}
+
+.control .toggleGroup button.toggleActive {
+  border-color: var(--orange);
+  background: rgba(255,153,10,0.08);
+  color: var(--dark);
+}
+
+/* Error state */
+.hasError .control input,
+.hasError .control select,
+.hasError .control textarea {
+  border-color: var(--red);
+}
+
+.error {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--red);
+  font-weight: 600;
+}

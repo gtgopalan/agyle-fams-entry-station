@@ -1,0 +1,92 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: background 0.18s ease, transform 0.1s ease, box-shadow 0.18s ease;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn:active:not(:disabled) { transform: scale(0.97); }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.icon { font-size: 1.2em; line-height: 1; flex-shrink: 0; }
+.label { line-height: 1; }
+
+/* ── Sizes ───────────────────────────────────────────── */
+.lg {
+  font-size: 1.1rem;
+  padding: 1.2rem 2.8rem;
+  border-radius: var(--radius-lg);
+  min-height: 68px;
+}
+
+.md {
+  font-size: 0.95rem;
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius-md);
+  min-height: 52px;
+}
+
+.sm {
+  font-size: 0.8rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: var(--radius-sm);
+  min-height: 38px;
+}
+
+/* ── Variants ────────────────────────────────────────── */
+.primary {
+  background: var(--orange);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(255,153,10,0.35);
+}
+.primary:hover:not(:disabled) {
+  background: var(--primary-hover);
+  box-shadow: 0 6px 20px rgba(255,153,10,0.45);
+}
+
+.secondary {
+  background: var(--white);
+  color: var(--dark);
+  border: 2px solid var(--border);
+}
+.secondary:hover:not(:disabled) {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.danger {
+  background: var(--red);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(150,13,20,0.3);
+}
+.danger:hover:not(:disabled) {
+  background: var(--danger-hover);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--text-muted);
+  border: 2px solid var(--border);
+}
+.ghost:hover:not(:disabled) {
+  color: var(--dark);
+  border-color: var(--dark);
+}
+
+.success {
+  background: var(--success);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(42,122,42,0.3);
+}
+
+/* ── Full width ──────────────────────────────────────── */
+.full { width: 100%; }

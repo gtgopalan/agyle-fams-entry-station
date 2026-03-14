@@ -1,0 +1,505 @@
+.layout {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+  background: var(--cream);
+}
+
+/* ── Stats Bar ─────────────────────────────────────── */
+.statsBar {
+  background: var(--dark);
+  color: var(--white);
+  padding: 0 2rem;
+  flex-shrink: 0;
+}
+
+.statsInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 0;
+  gap: 1rem;
+}
+
+.statGroup {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.stat:first-child {
+  padding-left: 0;
+}
+
+.statNumber {
+  font-family: var(--font-sans);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--white);
+}
+
+.statLabel {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 0.25rem;
+  white-space: nowrap;
+}
+
+.statDivider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.logoutBtn {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 1.1rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.logoutBtn:hover {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ── Main Content ──────────────────────────────────── */
+.content {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* ── Section ───────────────────────────────────────── */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0;
+}
+
+.countBadge {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: var(--orange);
+  color: var(--white);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  min-width: 1.6rem;
+  text-align: center;
+}
+
+/* Collapsible toggle button */
+.sectionToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+
+.sectionToggle:hover .sectionTitle {
+  color: var(--orange);
+}
+
+.toggleIcon {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+/* ── Cards Grid ────────────────────────────────────── */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ── Visitor Card ──────────────────────────────────── */
+.card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  position: relative;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.09);
+}
+
+.cardCheckedOut {
+  opacity: 0.65;
+  background: #f7f5f1;
+}
+
+.cardRestricted {
+  border-left: 4px solid var(--red);
+}
+
+/* Restricted badge */
+.restrictedBadge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--red);
+  color: var(--white);
+  border-radius: 4px;
+  padding: 0.18rem 0.5rem;
+}
+
+/* Card header */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.photoWrap {
+  flex-shrink: 0;
+}
+
+.photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+}
+
+.photoPlaceholder {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--dark);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+}
+
+.nameBlock {
+  flex: 1;
+  min-width: 0;
+}
+
+.visitorName {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.visitorSub {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0.2rem 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Time rows */
+.timeRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timeLabel {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  width: 3.5rem;
+  flex-shrink: 0;
+}
+
+.timeValue {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--dark);
+  font-weight: 500;
+}
+
+/* Info rows */
+.infoRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.infoLabel {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  width: 5rem;
+  flex-shrink: 0;
+  padding-top: 0.05rem;
+}
+
+.infoValue {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--dark);
+}
+
+/* Badge + PPE row */
+.badgeRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.badgeChip {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: #f0ede8;
+  border-radius: var(--radius-sm);
+  padding: 0.2rem 0.6rem;
+}
+
+.ppeBadge {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #1a6b3a;
+  background: #d1f0de;
+  border-radius: var(--radius-sm);
+  padding: 0.2rem 0.6rem;
+  letter-spacing: 0.02em;
+}
+
+/* Notes */
+.notesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.noteText {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+  font-style: italic;
+  padding: 0.5rem 0.75rem;
+  background: #faf9f6;
+  border-left: 3px solid var(--border);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.noteBtn {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-faint);
+  background: transparent;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.noteBtn:hover {
+  color: var(--dark);
+  border-color: var(--dark);
+}
+
+.noteEdit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.noteTextarea {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--dark);
+  background: var(--white);
+  border: 1.5px solid var(--orange);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.75rem;
+  resize: vertical;
+  outline: none;
+  line-height: 1.5;
+}
+
+.noteActions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.noteSave {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--dark);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.noteSave:hover {
+  background: var(--orange);
+}
+
+.noteCancel {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.9rem;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.noteCancel:hover {
+  color: var(--dark);
+  border-color: var(--dark);
+}
+
+/* Card actions */
+.cardActions {
+  margin-top: 0.25rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.checkOutBtn {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--red);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 1.4rem;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.checkOutBtn:hover {
+  background: #7a0b10;
+  transform: translateY(-1px);
+}
+
+.checkOutBtn:active {
+  transform: translateY(0);
+}
+
+/* Empty state */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1.5px dashed var(--border);
+  gap: 0.5rem;
+}
+
+.emptyIcon {
+  font-size: 2.5rem;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.emptyTitle {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0;
+}
+
+.emptySub {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  margin: 0;
+  text-align: center;
+}
